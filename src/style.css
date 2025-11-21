@@ -1,0 +1,187 @@
+
+:root{
+    --main-color-1:#a73500;
+    --main-color-2:#f39200;
+    --main-color-3:#fed9b7;
+    --main-color-4:#e4e4e465;
+
+    --white-color:#fff2e6;
+
+    --text-dark:#161616;
+    --nav-header-width:35px;
+
+    --text-description:#ffffff;
+
+    --bg-white-transparent:#ffffff42;
+}
+
+*{
+    margin: 0 ;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background:linear-gradient( -45deg, var(--main-color-1) ,var(--main-color-2));
+    /* background: linear-gradient(#00000088,#00000088),
+    url("https://images.unsplash.com/photo-1523218345414-cd47aea19ba6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1lYWx8ZW58MHx8MHx8fDA%3D") center / cover fixed; */
+    min-height: 100vh;
+
+    margin-left: var(--nav-header-width);
+}
+
+/* start of the nav */
+nav{
+    background: #c2c2c270;
+    backdrop-filter: blur(5px);
+    /* border: 1px solid var(--main-color-2); */
+    z-index: 50;
+}
+nav i {
+    color: #000000;
+}
+nav div.nav-header{
+    width: var(--nav-header-width);
+    background-color: #fcfcfc88;
+}
+nav div.nav-header img{
+    /* backdrop-filter: drop-shadow(0 0 4px red); */
+}
+
+nav li a{
+    /* border: 1px solid red; */
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+nav div.footer p{
+    font-size: 12px;
+    width: 80%;
+    text-align: center;
+}
+
+/* end of the nav */
+
+/* start of the header */
+
+
+h1{
+    font-size: 70px;
+
+}
+header{
+    color: var(--white-color);
+    /* text-shadow: 0 0px 2px #000000; */
+}
+*{
+    /* border: 1px solid red; */
+}
+header div.welcome{
+    /* padding-left: 10% !important; */
+    /* border: red solid 1px; */
+  
+    /* backdrop-filter:blur(5px); */
+}
+
+header div.welcome div.description{
+    max-width: 600px;
+}
+
+header div.welcome div.description p{
+    font-size: 14px;
+    color: var(--text-description);
+}
+
+/* recipes */
+ div.recipe  div.layer{
+    background: #000000d0;
+    font-size: 18px;
+    transform: translateY(105%);
+    transition: transform 0.5s;
+    color: var(--white-color);
+}
+ div.recipe:hover  div.layer{
+    transform: translateY(0);
+    
+}
+
+/* end of header ---------------------------------------------------- */
+
+/* start of recipe detais  ++++++++++++++++++++++++++++++++++++++++++++ */
+section.recipe-detials{
+    overflow: hidden;
+}
+section.recipe-detials div.image img{
+    border: 1px solid var(--bg-white-transparent);
+}
+section.recipe-detials{
+   
+    color: var(--white-color);
+    backdrop-filter: blur(5px);
+    background: var(--bg-white-transparent);
+}
+
+section.recipe-detials *{
+    /* border: 1px solid red; */
+}
+section.recipe-detials h2{
+    text-transform: uppercase;
+}
+
+section.recipe-detials p.instructions-p{
+    font-size: 13px;
+    color: var(--white-color);
+}
+section.recipe-detials div.ingredients li {
+
+    border: 1px solid var(--bg-white-transparent);
+    padding: 2px 10px;
+    border-radius: 5px;
+    background-color: var(--main-color-4);
+    color: var(--white-color);
+
+    font-size: 14px;  
+}
+
+section.recipe-detials div.more-info *:not(h2){
+    background: var(--bg-white-transparent);
+    margin: 0px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: var(--text-dark);
+    
+    
+}
+
+/* search section */
+
+section.search h2{
+    color: var(--white-color);
+    text-transform: capitalize;
+}
+
+
+
+/* start of the ingredients */
+section.ingredients h2{
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+section.ingredients div.ingredient{
+    border: 1px solid var(--white-color);
+    background: var(--bg-white-transparent);
+    width: 150px;
+
+}
+
+section.ingredients div.layer {
+    text-align: center;
+
+}

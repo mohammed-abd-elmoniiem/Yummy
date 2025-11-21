@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yummy</title>
+  </head>
+  <body class="">
+    <nav
+      class="d-flex flex-row-reverse vh-100 position-fixed justify-content-between text-capitalize"
+    >
+      <div
+        class="nav-header d-flex flex-column p-1 justify-content-between py-3 fs-4"
+      >
+        <img src="./public/logo.png" alt=""></i>
+        <i class="fa fa-bars toggle"></i>
+
+        <div class="d-flex flex-column gap-2">
+          <i class="fa fa-share-nodes align-self-end"></i>
+          <i class="fa fa-globe align-self-end"></i>
+        </div>
+      </div>
+
+      <div
+        class="nav-body d-flex flex-column justify-content-between overflow-hidden"
+      >
+        <ul
+          class="links d-flex flex-column m-0 p-0 py-5 align-items-start ps-4 gap-3"
+        >
+          <li><a href="#home">home</a></li>
+          <li><a href="#search">search</a></li>
+          <li><a href="#categories">categories</a></li>
+          <li><a href="#ingredients">ingredients</a></li>
+
+          <li><a href="#contact">contact us</a></li>
+        </ul>
+        <div class="footer">
+          <ul class="d-flex justify-content-evenly p-0">
+            <li>
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.x.com" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.google.com" target="_blank">
+                <i class="fa fa-globe"></i>
+              </a>
+            </li>
+          </ul>
+          <p class="mx-auto">Copyright © 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </nav>
+    <header class="container-md">
+      <div
+        class="welcome d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1 class="text-uppercase mt-5">yummy</h1>
+        <p class="ms-4">your daily inspiration for delicious meals</p>
+        <div class="description">
+          <p class="">
+            discover simple, flavorful and reliable recipes made for real
+            everyday cooking. from quik 10-minute meals to rich international
+            dishes, we bring you step-by-step instructions, smart cooking tips
+            and beautiful presentations to make evey plate a masterpiece.
+            whether you're a beginner or a kitchen pro,yummy helps you cook with
+            confidence and enjoy food like never before.
+          </p>
+        </div>
+      </div>
+
+      <div class="recipes-cards row py-5 px-2">
+        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="recipe position-relative rounded-4 overflow-hidden">
+            <div class="image">
+              <img
+                class="w-100"
+                src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
+                alt="image"
+              />
+            </div>
+            <div
+              class="layer position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center"
+            >
+              <p class="recipe-name">Spicy Arrabiata Penne</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </header>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/animation/navAnimation.js"></script>
+    <script type="module" src="/src/animation/recipesCardAnimation.js"></script>
+    <script type="module" src="/src/components/createRecipe.js"></script>
+
+    <!-- <script src="./src/api.js"></script> -->
+  </body>
+</html>
