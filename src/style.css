@@ -12,7 +12,7 @@
 
     --text-description:#ffffff;
 
-    --bg-white-transparent:#ffffff42;
+    --bg-white-transparent:#ffffff2c;
 }
 
 *{
@@ -102,12 +102,18 @@ header div.welcome div.description p{
  div.recipe  div.layer{
     background: #000000d0;
     font-size: 18px;
-    transform: translateY(105%);
-    transition: transform 0.5s;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s;
     color: var(--white-color);
 }
+
+div.recipe div.image{
+    background: var(--bg-white-transparent);
+    border:1px solid var(--bg-white-transparent);
+}
  div.recipe:hover  div.layer{
-    transform: translateY(0);
+    transform: scaleY(1);
     
 }
 
@@ -124,7 +130,7 @@ section.recipe-detials{
    
     color: var(--white-color);
     backdrop-filter: blur(5px);
-    background: var(--bg-white-transparent);
+    /* background: var(--bg-white-transparent); */
 }
 
 section.recipe-detials *{
@@ -140,7 +146,7 @@ section.recipe-detials p.instructions-p{
 }
 section.recipe-detials div.ingredients li {
 
-    border: 1px solid var(--bg-white-transparent);
+    /* border: 1px solid var(--bg-white-transparent); */
     padding: 2px 10px;
     border-radius: 5px;
     background-color: var(--main-color-4);
@@ -166,22 +172,79 @@ section.search h2{
     text-transform: capitalize;
 }
 
+/* start of the categories */
+section.categories h2{
+    color: var(--white-color);
+        text-transform: uppercase !important;
+        text-align: center;
+}
+
 
 
 /* start of the ingredients */
 section.ingredients h2{
     color: var(--white-color);
-    text-transform: uppercase;
+    text-transform: uppercase !important;
+    text-align: center;
 }
 
 section.ingredients div.ingredient{
     border: 1px solid var(--white-color);
     background: var(--bg-white-transparent);
-    width: 150px;
+    width: 130px;
 
 }
 
 section.ingredients div.layer {
     text-align: center;
 
+}
+
+
+
+/* start of the areas */
+section.areas h2{
+    color: var(--white-color);
+        text-transform: uppercase !important;
+        text-align: center;
+
+}
+section.areas div.area{
+    background: var(--bg-white-transparent);
+    color: var(--white-color);
+    transition: transform 0.2s;
+}
+section.areas div.area:hover{
+    transform: scale(1.1);
+    /* border: var(--main-color-1) 1px solid; */
+}
+
+
+
+/* start of contact section */
+
+section.contact div.input-container{
+    width: 100%;
+    max-width: 500px;
+    /* margin-block: 10px; */
+}
+
+section.contact div.input-container:has(input.is-invalid)::before{
+    content: attr(msg);
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    z-index: 45;
+    color: rgba(201, 0, 0, 0.856);
+    font-size: 14px;
+    /* width: max-content; */
+    /* background: var(--bg-white-transparent); */
+    /* width: 200px;
+    height: 200px; */
+    /* background-color: green; */
+}
+
+section.contact div.input-container:has(input[type="password"]:not([placeholder="repassword"]).is-invalid){
+    /* border: red 5px solid; */
+    margin-bottom: 20px;
 }

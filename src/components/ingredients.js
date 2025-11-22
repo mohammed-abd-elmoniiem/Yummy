@@ -5,11 +5,6 @@ import { createIngredient } from "./ingredient.js";
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'ingredients container-lg py-5 d ';
-sectionElement.innerHTML = `
-<h2 class="text-capitalize"> ingredients </h2>
-
-
-`
 /**
  * 
  * @param {
@@ -27,6 +22,9 @@ sectionElement.innerHTML = `
  */
 
 export function ingredients(allIngredients){
+    
+    sectionElement.innerHTML = `<h2 class="text-capitalize"> ingredients </h2>`
+
 
     const ingredientsContainerDiv = document.createElement('div');
     ingredientsContainerDiv.className = 'd-flex flex-wrap gap-2 justify-content-center'

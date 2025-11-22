@@ -33,19 +33,19 @@ export function createRecipeCard(recipe){
 
 
     const recipeDiv = document.createElement('div');
-    recipeDiv.className = ' position-relative rounded-4 overflow-hidden';
+    recipeDiv.className = ' position-relative rounded-3 overflow-hidden';
 
 
     const imgDiv = document.createElement('div');
-    imgDiv.className = 'image';
+    imgDiv.className = 'image p-2';
 
     const img = document.createElement('img');
     img.src = recipe['strMealThumb']+'/medium';
-    img.className = 'w-100';
+    img.className = 'w-100 rounded-2';
     img.alt = recipe['strMeal'];
 
     const layerDiv = document.createElement('div');
-    layerDiv.className ="layer position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center";
+    layerDiv.className ="layer position-absolute top-0 bottom-0 start-0 end-0 m-2 d-flex justify-content-center align-items-center";
    
 
 

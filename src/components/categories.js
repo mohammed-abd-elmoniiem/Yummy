@@ -4,14 +4,12 @@ import { hideAll } from "./hideAll.js";
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'categories container-lg py-5 d ';
-sectionElement.innerHTML = `
-<h2 class="text-capitalize"> all Categories </h2>
-
-
-`
 
 
 export function categories(allCategories){
+    
+    sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2>`
+
 
     const categoriesContainerDiv = document.createElement('div');
     categoriesContainerDiv.className = 'row row-cols-mg-2 py-5 g-2'
@@ -44,7 +42,7 @@ function createCategoryDiv(category){
 
 
     const imgDiv = document.createElement('div');
-    imgDiv.className = 'image';
+    imgDiv.className = 'image rounded-2';
 
     const img = document.createElement('img');
     img.src = category['strCategoryThumb'];
@@ -52,7 +50,7 @@ function createCategoryDiv(category){
     img.alt = category['strCategory'];
 
     const layerDiv = document.createElement('div');
-    layerDiv.className ="layer position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center";
+    layerDiv.className ="layer position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center m-2 rounded-2";
    
 
 

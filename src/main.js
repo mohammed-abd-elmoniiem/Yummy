@@ -3,7 +3,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './style.css';
 import { addRecipes } from './components/addRandomRecipes';
-import { searchChar } from './constants';
+// import { searchChar } from './constants';
 import { getRandomRecipes } from './APIs/getRandomRecipes';
 import { createRecipeSection } from './components/createRecipe';
 import gsap from 'gsap';
@@ -16,6 +16,12 @@ import { categories } from './components/categories.js';
 import { getAllIngredients } from './APIs/getAllIngredients.js';
 import { ingredients } from './components/ingredients.js';
 import { hideAll } from './components/hideAll.js';
+import { getAllAreas } from './APIs/getAllAreas.js';
+import { areas } from './components/areas.js';
+
+
+import './animation/areaAnimation.js'
+import { contact } from './components/contact.js';
 
 
 
@@ -148,7 +154,7 @@ document.querySelector('nav li:has(a[href="#categories"])').addEventListener('cl
 // -----------------------------------------------------------------------------------------------------------
 
 
-// on display on categories link +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// on display ingredients link +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.querySelector('nav li:has(a[href="#ingredients"])').addEventListener('click',async eve=>{
   
   hideAll()
@@ -157,6 +163,31 @@ document.querySelector('nav li:has(a[href="#ingredients"])').addEventListener('c
   
 
   document.body.append(ingredients(result['meals'].slice(0,15)))
+
+});
+// -----------------------------------------------------------------------------------------------------------
+
+
+// on display ingredients link +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+document.querySelector('nav li:has(a[href="#areas"])').addEventListener('click',async eve=>{
+  
+  hideAll()
+
+  const result = await getAllAreas();
+  console.log(result)
+  
+
+  document.body.append(areas(result['meals']))
+
+});
+// -----------------------------------------------------------------------------------------------------------
+
+
+// on display contact link +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+document.querySelector('nav li:has(a[href="#contact"])').addEventListener('click',async eve=>{
+  
+  hideAll()
+  document.body.append(contact())
 
 });
 // -----------------------------------------------------------------------------------------------------------
