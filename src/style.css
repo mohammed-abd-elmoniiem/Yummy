@@ -1,6 +1,6 @@
 
 :root{
-    --main-color-1:#a73500;
+    --main-color-1:#ff5100;
     --main-color-2:#f39200;
     --main-color-3:#fed9b7;
     --main-color-4:#e4e4e465;
@@ -226,7 +226,24 @@ section.areas div.area:hover{
 section.contact div.input-container{
     width: 100%;
     max-width: 500px;
+    transition: margin 0.2s;
     /* margin-block: 10px; */
+}
+section.contact div.input-container input{
+    background: var(--bg-white-transparent);
+    color: var(--white-color);
+    font-size: 15px;
+    border: none;
+    
+}
+section.contact div.input-container input:focus{
+   
+    
+}
+section.contact div.input-container input::placeholder{
+    text-transform: capitalize   ;
+    font-size: 15px;
+    color: var(--white-color);
 }
 
 section.contact div.input-container:has(input.is-invalid)::before{
@@ -246,5 +263,39 @@ section.contact div.input-container:has(input.is-invalid)::before{
 
 section.contact div.input-container:has(input[type="password"]:not([placeholder="repassword"]).is-invalid){
     /* border: red 5px solid; */
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+section.contact  button{
+    padding: 3px 8px;
+    border: none;
+    background: var(--main-color-3);
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    /* border: 1px solid red; */
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: red;
+    cursor:not-allowed;
+}
+
+section.contact button.active{
+    opacity: 1;
+    /* border: 1px solid green; */
+    color: green;
+    cursor: pointer;
+
+}
+
+
+/* media query */
+
+@media screen and (min-width:350px) {
+    section.contact div.input-container:has(input[type="password"]:not([placeholder="repassword"]).is-invalid) {
+            /* border: red 5px solid; */
+            margin-bottom: 20px;
+    }
+    
 }

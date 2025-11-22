@@ -88,6 +88,8 @@ sectionElement.className = 'contact container-lg py-5 d-flex flex-column align-i
             this.classList.remove('is-valid')
             this.classList.add('is-invalid')
         }
+
+        activeBtn()
     });
 
 
@@ -95,10 +97,43 @@ sectionElement.className = 'contact container-lg py-5 d-flex flex-column align-i
 
 // email input ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+const btnSubmit = document.createElement('button');
+btnSubmit.innerHTML = 'submit'
+sectionElement.append(btnSubmit);
+
+btnSubmit.addEventListener('click', function(eve){
+    if(this.classList.contains('active')){
+        console.log('can be submit')
+    }else{
+        
+    }
+})
+
+function activeBtn(){
+    
+   const result =    Array.from(sectionElement.querySelectorAll('input')).reduce((acc,ele)=>{
+
+        return (acc && ele.classList.contains('is-valid') && ele.value.length > 0)
+
+    },true)
+
+    if(result){
+        btnSubmit.classList.add('active');
+    }else{
+        btnSubmit.classList.remove('active');
+      
+    }
+
+    
+
+}
 // --------------------------------------------------------------------------------------------
 
 
 export function contact(){
+
+    Array.from(sectionElement.querySelectorAll('input')).forEach(ele=>ele.value = null)
 
     return sectionElement
 
