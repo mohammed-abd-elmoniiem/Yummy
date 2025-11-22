@@ -1,7 +1,9 @@
 
 import { getAllCategories } from "../APIs/getAllCategories.js";
+
 import { createCategory} from "./category.js";
 import { hideAll } from "./hideAll.js";
+import { loadingDiv } from "./loading.js";
 
 
 const sectionElement = document.createElement('section');
@@ -10,7 +12,8 @@ sectionElement.className = 'categories container-lg py-5 d ';
 
 export async function categories(){
     
-    sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2>`
+    sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2> `
+    sectionElement.append(loadingDiv)
 
   
 
@@ -21,6 +24,9 @@ export async function categories(){
       
     document.body.append(sectionElement)
     const allCategories= await getAllCategories()
+
+    sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2> `
+
     
  
 

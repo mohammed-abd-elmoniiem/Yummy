@@ -13,7 +13,14 @@ export const API_FILTER_INGREDIENT= `https://www.themealdb.com/api/json/v1/1/fil
 export const API_FILTER_CATEGORY = `https://www.themealdb.com/api/json/v1/1/filter.php?c=`
 export const API_FILTER_AREA = `https://www.themealdb.com/api/json/v1/1/filter.php?a=`
 
-
+// export const loadingBall = `    <div class="loading-container">
+//        <div class="loading-circle"> </div>
+//        <div class="loading-circle"> </div>
+//        <div class="loading-circle"> </div>
+//        <div class="loading-circle"> </div>
+//        <div class="loading-circle"> </div>
+//     </div>
+//     `
 /*
 Add /preview to the end of the meal image URL
 /images/media/meals/llcbn01574260722.jpg/small

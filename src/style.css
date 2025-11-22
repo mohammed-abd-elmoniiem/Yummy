@@ -20,6 +20,25 @@
     padding: 0;
 }
 
+div.loading-container{
+    width: 200px;
+    height: 200px;
+    margin-inline: auto;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+div.loading-circle{
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color-4);
+    border-radius: 50%;
+}
+
 ul{
     list-style: none;
 }
@@ -83,9 +102,9 @@ header{
     /* border: 1px solid red; */
 }
 header div.welcome{
+
     /* padding-left: 10% !important; */
     /* border: red solid 1px; */
-  
     /* backdrop-filter:blur(5px); */
 }
 
@@ -112,7 +131,8 @@ div.recipe div.image{
     background: var(--bg-white-transparent);
     border:1px solid var(--bg-white-transparent);
 }
- div.recipe:hover  div.layer{
+
+div.recipe:hover  div.layer{
     transform: scaleY(1);
     
 }
@@ -204,9 +224,10 @@ section.ingredients div.layer {
 
 /* start of the areas */
 section.areas h2{
+
     color: var(--white-color);
-        text-transform: uppercase !important;
-        text-align: center;
+    text-transform: uppercase !important;
+    text-align: center;
 
 }
 section.areas div.area{

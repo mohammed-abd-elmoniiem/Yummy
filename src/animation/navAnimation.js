@@ -76,7 +76,7 @@ toggleIcon.addEventListener('click',function(eve){
 
 window.addEventListener('click',eve=>{
 
-    if(toggleIcon.classList.contains('fa-close')){
+    if(toggleIcon.classList.contains('fa-close') & eve.target != toggleIcon){
 
         gsap.to('nav div.nav-body ul.links li',{
         opacity:0,
@@ -105,4 +105,36 @@ window.addEventListener('click',eve=>{
 //     left:-navBodyWidth
 // });
 
+})
+
+document.querySelector('nav div.nav-header').addEventListener('click',function(eve){
+    if(eve.target == this & toggleIcon.classList.contains('fa-bars')){
+
+            gsap.to('nav',{
+        duration:0.3,
+        left:0,
+        ease:'power3',
+        onComplete:e=>{
+          toggleIcon.classList.toggle('fa-close');
+          toggleIcon.classList.toggle('fa-bars'); 
+
+          gsap.to('nav div.nav-body ul.links li',{
+            opacity:1,
+            y:0,
+            duration:0.2,
+            delay:0.2,
+            stagger:0.1
+
+            })
+
+        }
+        
+
+    })
+
+   
+
+  
+
+    }
 })
