@@ -8,12 +8,13 @@
 import { createArea } from "./area.js";
 import { hideAll } from "./hideAll.js";
 import { createIngredient } from "./ingredient.js";
+import { getAllAreas } from "../APIs/getAllAreas.js";
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'areas container-lg py-5 d ';
 
 
-export function areas(allAreas){
+export async function areas(){
    sectionElement.innerHTML = `<h2 class="text-capitalize"> Areas </h2>`
 
 
@@ -21,8 +22,13 @@ export function areas(allAreas){
     areasContainerDiv.innerHTML = ""
     areasContainerDiv.className = 'd-flex flex-wrap gap-2 justify-content-center'
 
-    console.log(allAreas)
- 
+
+    document.body.append(sectionElement)
+
+
+    const result = await getAllAreas();
+    const allAreas = result['meals'];
+    
 
     allAreas.forEach(areaData => {
        

@@ -3,25 +3,14 @@
 import { hideAll } from "./hideAll.js";
 import { createIngredient } from "./ingredient.js";
 
+import { getAllIngredients } from "../APIs/getAllIngredients.js";
+
 const sectionElement = document.createElement('section');
 sectionElement.className = 'ingredients container-lg py-5 d ';
-/**
- * 
- * @param {
- * } allIngredients 
- * @returns 
- * 
- * 
- * {
-  "idIngredient": "1",
-  "strIngredient": "Chicken",
-  "strDescription": "The chicken is a type of domesticated fowl, a subspecies of the red junglefowl (Gallus gallus). It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011. There are more chickens in the world than any other bird or domesticated fowl. Humans keep chickens primarily as a source of food (consuming both their meat and eggs) and, less commonly, as pets. Originally raised for cockfighting or for special ceremonies, chickens were not kept for food until the Hellenistic period (4th–2nd centuries BC).\r\n\r\nGenetic studies have pointed to multiple maternal origins in South Asia, Southeast Asia, and East Asia, but with the clade found in the Americas, Europe, the Middle East and Africa originating in the Indian subcontinent. From ancient India, the domesticated chicken spread to Lydia in western Asia Minor, and to Greece by the 5th century BC. Fowl had been known in Egypt since the mid-15th century BC, with the \"bird that gives birth every day\" having come to Egypt from the land between Syria and Shinar, Babylonia, according to the annals of Thutmose III.",
-  "strThumb": "https://www.themealdb.com/images/ingredients/chicken.png",
-  "strType": null
-}
- */
 
-export function ingredients(allIngredients){
+
+
+export async function ingredients(){
     
     sectionElement.innerHTML = `<h2 class="text-capitalize"> ingredients </h2>`
 
@@ -29,7 +18,14 @@ export function ingredients(allIngredients){
     const ingredientsContainerDiv = document.createElement('div');
     ingredientsContainerDiv.className = 'd-flex flex-wrap gap-2 justify-content-center'
 
-    console.log(allIngredients)
+    document.body.append(sectionElement)
+
+
+    const result =  await getAllIngredients();
+    const allIngredients = result['meals'].splice(0,20);
+
+
+  
  
 
     allIngredients.forEach(ingredientData => {

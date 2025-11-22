@@ -1,18 +1,27 @@
 
+import { getAllCategories } from "../APIs/getAllCategories.js";
 import { createCategory} from "./category.js";
 import { hideAll } from "./hideAll.js";
+
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'categories container-lg py-5 d ';
 
 
-export function categories(allCategories){
+export async function categories(){
     
     sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2>`
+
+  
+
 
 
     const categoriesContainerDiv = document.createElement('div');
     categoriesContainerDiv.className = 'row row-cols-mg-2 py-5 g-2'
+      
+    document.body.append(sectionElement)
+    const allCategories= await getAllCategories()
+    
  
 
     allCategories['categories'].forEach(category => {
@@ -23,10 +32,6 @@ export function categories(allCategories){
     sectionElement.append(categoriesContainerDiv)
 
 
-
-
-    return sectionElement;
-
 }
 
 
@@ -34,6 +39,8 @@ function createCategoryDiv(category){
 
      const containerDiv = document.createElement('div');
     containerDiv.className = "recipe col-12 col-sm-6 col-md-4 col-lg-3 g-3";
+
+    
    
 
 

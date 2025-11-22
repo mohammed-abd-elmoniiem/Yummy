@@ -144,11 +144,8 @@ document.querySelector('nav li:has(a[href="#search"])').addEventListener('click'
 // on display on categories link +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.querySelector('nav li:has(a[href="#categories"])').addEventListener('click',async eve=>{
   
-  hideAll()
-
-  const result = await getAllCategories()
- 
-  document.body.append(categories(result))
+  hideAll();
+  categories();
 
 });
 // -----------------------------------------------------------------------------------------------------------
@@ -158,11 +155,7 @@ document.querySelector('nav li:has(a[href="#categories"])').addEventListener('cl
 document.querySelector('nav li:has(a[href="#ingredients"])').addEventListener('click',async eve=>{
   
   hideAll()
-
-  const result = await getAllIngredients()
-  
-
-  document.body.append(ingredients(result['meals'].slice(0,15)))
+  ingredients()
 
 });
 // -----------------------------------------------------------------------------------------------------------
@@ -172,12 +165,9 @@ document.querySelector('nav li:has(a[href="#ingredients"])').addEventListener('c
 document.querySelector('nav li:has(a[href="#areas"])').addEventListener('click',async eve=>{
   
   hideAll()
-
-  const result = await getAllAreas();
-  console.log(result)
+areas()
   
 
-  document.body.append(areas(result['meals']))
 
 });
 // -----------------------------------------------------------------------------------------------------------
