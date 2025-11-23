@@ -3,24 +3,18 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './style.css';
 import { addRecipes } from './components/addRandomRecipes';
-// import { searchChar } from './constants';
-import { getRandomRecipes } from './APIs/getRandomRecipes';
-import { createRecipeSection } from './components/createRecipe';
-import gsap from 'gsap';
-import { toggleHeaderDiplay } from './animation/toggleHeaderdisplay';
-import { getRecipeById } from './APIs/getrecipeById';
+
 import { createSearchSection } from './components/searchSection';
-import { getRecipesSearchByName } from './APIs/getRecipeSearchByName';
-import { getAllCategories } from'./APIs/getAllCategories.js'
+
 import { categories } from './components/categories.js';
-import { getAllIngredients } from './APIs/getAllIngredients.js';
+
 import { ingredients } from './components/ingredients.js';
 import { hideAll } from './components/hideAll.js';
-import { getAllAreas } from './APIs/getAllAreas.js';
+
 import { areas } from './components/areas.js';
 
 
-import './animation/areaAnimation.js'
+
 import { contact } from './components/contact.js';
 
 import { loadingDiv } from './components/loading.js';
