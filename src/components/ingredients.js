@@ -4,6 +4,7 @@ import { hideAll } from "./hideAll.js";
 import { createIngredient } from "./ingredient.js";
 
 import { getAllIngredients } from "../APIs/getAllIngredients.js";
+import { loadingDiv } from "./loading.js";
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'ingredients container-lg py-5 d ';
@@ -13,19 +14,20 @@ sectionElement.className = 'ingredients container-lg py-5 d ';
 export async function ingredients(){
     
     sectionElement.innerHTML = `<h2 class="text-capitalize"> ingredients </h2>`
+    document.body.append(sectionElement);
+    sectionElement.append(loadingDiv)
 
+   
 
-    const ingredientsContainerDiv = document.createElement('div');
-    ingredientsContainerDiv.className = 'd-flex flex-wrap gap-2 justify-content-center'
-
-    document.body.append(sectionElement)
+    
 
 
     const result =  await getAllIngredients();
     const allIngredients = result['meals'].splice(0,20);
 
 
-  
+    const ingredientsContainerDiv = document.createElement('div');
+    ingredientsContainerDiv.className = 'd-flex flex-wrap gap-2 justify-content-center'
  
 
     allIngredients.forEach(ingredientData => {
@@ -33,6 +35,7 @@ export async function ingredients(){
        ingredientsContainerDiv.append(createIngredientDiv(ingredientData))
         
     });
+    loadingDiv.remove()
     sectionElement.append(ingredientsContainerDiv)
 
 
@@ -88,7 +91,6 @@ function createIngredientDiv(ingredientData){
 
     // handler of click on category
     containerDiv.addEventListener('click',async function(eve){
-        console.log(eve.target)
         hideAll()
 
         document.body.append( await createIngredient(ingredientData['strIngredient']) ) 

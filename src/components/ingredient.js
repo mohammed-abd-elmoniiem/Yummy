@@ -2,6 +2,7 @@ import { getRecipeById } from "../APIs/getrecipeById";
 import { getRecipesByIngredient } from "../APIs/getRecipesByIngredient";
 
 import { createRecipeCard } from "./createRecipeCard";
+import { loadingDiv } from "./loading";
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'ingredient container-lg py-5 '
@@ -15,20 +16,23 @@ returnDataDiv.className = 'recipes-cards row py-5 px-2'
 export async function createIngredient(ingredientName){
 
     sectionElement.innerHTML = `<h2 class="" > all recipes of ${ingredientName} </h2> `
+    sectionElement.append(loadingDiv)
 
        
-      const recipes = await getRecipesByIngredient(ingredientName);
-      returnDataDiv.innerHTML = " "
-      recipes['meals'].forEach(async element => {
-        
+    const recipes = await getRecipesByIngredient(ingredientName);
+    returnDataDiv.innerHTML = " "
+    recipes['meals'].forEach(async element => {
+      
 
-        const recipe = await getRecipeById(element['idMeal'])
+      const recipe = await getRecipeById(element['idMeal'])
 
-        returnDataDiv.append(createRecipeCard(recipe['meals'][0]))
+      returnDataDiv.append(createRecipeCard(recipe['meals'][0]))
 
-      })
+    })
 
-      sectionElement.append(returnDataDiv);
+    loadingDiv.remove()
+
+    sectionElement.append(returnDataDiv);
 
     return sectionElement;
 

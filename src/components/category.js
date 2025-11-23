@@ -2,9 +2,10 @@ import { getRecipeById } from "../APIs/getrecipeById";
 import { getRecipesByCategory } from "../APIs/getRecipesByCategory";
 import { getRecipesSearchByName } from "../APIs/getRecipeSearchByName";
 import { createRecipeCard } from "./createRecipeCard";
+import { loadingDiv } from "./loading";
 
 const sectionElement = document.createElement('section');
-sectionElement.className = 'search container-lg py-5 '
+sectionElement.className = 'category container-lg py-5 '
 
 
 const returnDataDiv = document.createElement('div');
@@ -14,11 +15,8 @@ returnDataDiv.className = 'recipes-cards row py-5 px-2'
 
 export async function createCategory(categoryName){
 
-    sectionElement.innerHTML = `
-      <h2 class="" > all recipes of ${categoryName} </h2>
-
-       
-`
+    sectionElement.innerHTML = `    <h2 class="" > all recipes of ${categoryName} </h2>  `;
+    sectionElement.append(loadingDiv)
 
 
 
@@ -32,6 +30,8 @@ export async function createCategory(categoryName){
         returnDataDiv.append(createRecipeCard(recipe['meals'][0]))
 
       })
+
+      loadingDiv.remove()
 
       sectionElement.append(returnDataDiv);
 

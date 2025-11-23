@@ -13,6 +13,7 @@ Once the potatoes are cooked, tip out onto a platter and pour over the tomato sa
  */
 
 import { getRecipeById } from "../APIs/getrecipeById";
+import { loadingDiv } from "./loading";
 
 
     // create elements first
@@ -125,9 +126,12 @@ export async function createRecipeSection(idMeal){
 
     // console.log(idMeal)
 
+    sectionRecipe.append(loadingDiv)
+
     
     const{meals:[ data] }= await getRecipeById(idMeal);
-    console.log(data)
+    
+    sectionRecipe.remove(loadingDiv)
 
     
 

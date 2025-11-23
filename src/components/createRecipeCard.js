@@ -1,25 +1,8 @@
 
 import { hideAll } from "./hideAll";
 import { createRecipeSection } from "./createRecipe";
-/**
- * 
- * <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="recipe position-relative rounded-4 overflow-hidden">
-            <div class="image">
-              <img
-                class="w-100"
-                src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
-                alt="image"
-              />
-            </div>
-            <div
-              class="layer position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center"
-            >
-              <p class="recipe-name">Spicy Arrabiata Penne</p>
-            </div>
-          </div>
-        </div>
- */
+import { loadingDiv } from "./loading";
+
 
 
 
@@ -70,7 +53,10 @@ export function createRecipeCard(recipe){
     containerDiv.addEventListener('click',async function(eve){
      
        hideAll();   
-      document.body.append( await createRecipeSection(recipe['idMeal']))
+       document.body.append(loadingDiv);
+       const recipeDetails =  await createRecipeSection(recipe['idMeal']);
+       loadingDiv.remove()
+      document.body.append(recipeDetails)
 
 
 

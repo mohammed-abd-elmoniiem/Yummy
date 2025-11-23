@@ -11,21 +11,19 @@ sectionElement.className = 'categories container-lg py-5 d ';
 
 
 export async function categories(){
-    
+
+
+    document.body.append(sectionElement)
     sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2> `
     sectionElement.append(loadingDiv)
 
-  
-
-
-
-    const categoriesContainerDiv = document.createElement('div');
-    categoriesContainerDiv.className = 'row row-cols-mg-2 py-5 g-2'
-      
-    document.body.append(sectionElement)
     const allCategories= await getAllCategories()
 
-    sectionElement.innerHTML = `<h2 class="text-capitalize"> all Categories </h2> `
+     const categoriesContainerDiv = document.createElement('div');
+    categoriesContainerDiv.className = 'row row-cols-mg-2 py-5 g-2'
+      
+
+    
 
     
  
@@ -35,6 +33,9 @@ export async function categories(){
         categoriesContainerDiv.append(createCategoryDiv(category))
         
     });
+
+
+    loadingDiv.remove()
     sectionElement.append(categoriesContainerDiv)
 
 

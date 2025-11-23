@@ -199,7 +199,11 @@ section.categories h2{
         text-align: center;
 }
 
-
+section.category h2{
+    color: var(--white-color);
+        text-transform: uppercase !important;
+        text-align: center;
+}
 
 /* start of the ingredients */
 section.ingredients h2{
@@ -220,7 +224,11 @@ section.ingredients div.layer {
 
 }
 
-
+section.ingredient h2 {
+    color: var(--white-color);
+    text-transform: uppercase !important;
+    text-align: center;
+}
 
 /* start of the areas */
 section.areas h2{
