@@ -75,6 +75,7 @@ sectionElement.append(returnDataDiv);
   inputByLetter.addEventListener('input',async function(eve){
 
     if(this.value.length != 0){
+      if(this.value.length > 1) this.value = this.value[0]
 
         const recipes = await getRecipesSearchByName(this.value);
       returnDataDiv.innerHTML = " "

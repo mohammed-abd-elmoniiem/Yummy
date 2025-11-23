@@ -224,7 +224,7 @@ section.ingredients div.layer {
 
 }
 
-section.ingredient h2 {
+section h2 {
     color: var(--white-color);
     text-transform: uppercase !important;
     text-align: center;

@@ -26,7 +26,7 @@ toggleIcon.addEventListener('click',function(eve){
     
     
     gsap.to('nav',{
-        duration:0.3,
+        duration:0.2,
         left:toggleIcon.classList.contains('fa-bars')? 0:-navBodyWidth,
         ease:'power3',
         onComplete:e=>{
@@ -52,8 +52,8 @@ toggleIcon.addEventListener('click',function(eve){
         gsap.to('nav div.nav-body ul.links li',{
         opacity:1,
         y:0,
-        duration:0.2,
-        delay:0.2,
+        duration:0.1,
+        delay:0,
         stagger:0.1
 
         })
