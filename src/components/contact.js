@@ -2,6 +2,7 @@
 
 const sectionElement = document.createElement('section');
 sectionElement.className = 'contact container-lg py-5 d-flex flex-column align-items-center gap-4';
+sectionElement.innerHTML = '<h2> contact us </h2>';
 
 
 
@@ -40,7 +41,7 @@ sectionElement.className = 'contact container-lg py-5 d-flex flex-column align-i
         
       
     },
-    ,
+    
     {
         type:'password',
         placeholder:'repassword',
@@ -48,7 +49,7 @@ sectionElement.className = 'contact container-lg py-5 d-flex flex-column align-i
         regex:/^\d*[a-zA-Z]*(\d+[a-zA-Z]+|[a-zA-Z]+\d+)+\d*[a-zA-Z]*$/
         
       
-    },
+    }
 ].forEach(input=>{
 
     const inputTag = document.createElement('input');
