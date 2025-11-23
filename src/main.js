@@ -3,20 +3,12 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './style.css';
 import { addRecipes } from './components/addRandomRecipes';
-
 import { createSearchSection } from './components/searchSection';
-
 import { categories } from './components/categories.js';
-
 import { ingredients } from './components/ingredients.js';
 import { hideAll } from './components/hideAll.js';
-
 import { areas } from './components/areas.js';
-
-
-
 import { contact } from './components/contact.js';
-
 import { loadingDiv } from './components/loading.js';
 
 
@@ -29,7 +21,7 @@ import { loadingDiv } from './components/loading.js';
 
 
 function init(){
-  // document.querySelector();
+  
 
     const recipesContainer = document.querySelector('div.recipes-cards');
     recipesContainer.append(loadingDiv)

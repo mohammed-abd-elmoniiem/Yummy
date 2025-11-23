@@ -62,7 +62,7 @@ const ingredientsUl = document.createElement('ul');
 ingredientsUl.className = 'ingredients d-flex gap-3 flex-wrap '
 
 const moreInfoDiv = document.createElement('div');
-moreInfoDiv.className = 'more-info d-flex flex-wrap gap-3 align-items-center justify-content-start mt-3';
+moreInfoDiv.className = 'more-info d-flex flex-wrap gap-3 align-items-center justify-content-start mt-3 py-3';
 
 const moreInfoH2 = document.createElement('h2');
 moreInfoH2.className = ''
