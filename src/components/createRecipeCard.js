@@ -11,7 +11,7 @@ export function createRecipeCard(recipe){
   // console.log(recipe)
     
     const containerDiv = document.createElement('div');
-    containerDiv.className = "recipe col-12 col-sm-6 col-md-4 col-lg-3 g-3";
+    containerDiv.className = "recipe my-card col-12 col-sm-6 col-md-4 col-lg-3 g-3";
    
 
 

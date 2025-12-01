@@ -128,10 +128,14 @@ div.recipe:hover  div.layer{
     transform: scaleY(1);
     
 }
-
+div.my-card{
+    min-height: 200px !important;
+}
 /* end of header ---------------------------------------------------- */
 
 /* start of recipe detais  ++++++++++++++++++++++++++++++++++++++++++++ */
+
+
 section.recipe-detials{
     overflow: hidden;
 }

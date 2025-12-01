@@ -80,7 +80,7 @@ function createAreaDiv(areaData){
         console.log(eve.target)
         hideAll()
 
-        document.body.append( await createArea(areaData['strArea']) ) 
+        await createArea(areaData['strArea']) 
 
     })
 

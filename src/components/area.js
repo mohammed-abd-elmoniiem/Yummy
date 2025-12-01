@@ -15,6 +15,7 @@ returnDataDiv.className = 'recipes-cards row py-5 px-2'
 
 
 export async function createArea(areaName){
+  document.body.append( sectionElement);
 
     sectionElement.innerHTML = `<h2 class="" > all recipes of ${areaName} </h2> `
 
@@ -35,8 +36,7 @@ export async function createArea(areaName){
 
       sectionElement.append(returnDataDiv);
 
-    return sectionElement;
-
+   
 
 
 }

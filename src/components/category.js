@@ -15,6 +15,8 @@ returnDataDiv.className = 'recipes-cards row py-5 px-2'
 
 export async function createCategory(categoryName){
 
+  document.body.append(sectionElement)
+
     sectionElement.innerHTML = `    <h2 class="" > all recipes of ${categoryName} </h2>  `;
     sectionElement.append(loadingDiv)
 
@@ -35,7 +37,7 @@ export async function createCategory(categoryName){
 
       sectionElement.append(returnDataDiv);
 
-    return sectionElement;
+
 
 
 

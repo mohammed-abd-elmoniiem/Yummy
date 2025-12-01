@@ -93,7 +93,7 @@ function createIngredientDiv(ingredientData){
     containerDiv.addEventListener('click',async function(eve){
         hideAll()
 
-        document.body.append( await createIngredient(ingredientData['strIngredient']) ) 
+         await createIngredient(ingredientData['strIngredient']) 
 
     })
 

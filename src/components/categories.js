@@ -92,7 +92,7 @@ function createCategoryDiv(category){
         // console.log(eve.target)
         hideAll()
 
-        document.body.append(await createCategory( await category['strCategory'])) 
+        await createCategory( await category['strCategory'])
 
     })
 
