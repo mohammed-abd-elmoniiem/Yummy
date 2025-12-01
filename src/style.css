@@ -1,7 +1,7 @@
 
 :root{
-    --main-color-1:#ff5100;
-    --main-color-2:#f39200;
+    --main-color-1:#192124;
+    --main-color-2:#424242;
     --main-color-3:#fed9b7;
     --main-color-4:#e4e4e465;
 
@@ -123,14 +123,17 @@ div.recipe div.image{
     background: var(--bg-white-transparent);
     border:1px solid var(--bg-white-transparent);
 }
+/* div.recipe {
+    height: 300px;
+} */
 
 div.recipe:hover  div.layer{
     transform: scaleY(1);
     
 }
-div.my-card{
-    min-height: 200px !important;
-}
+/* div.my-card{
+    height: 300px !important;
+} */
 /* end of header ---------------------------------------------------- */
 
 /* start of recipe detais  ++++++++++++++++++++++++++++++++++++++++++++ */
